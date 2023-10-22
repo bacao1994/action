@@ -21,3 +21,10 @@ jobs:
 
       - name: Run tests
         run: mvn test --file pom.xml
+      
+      - name: Run Other Test Cases
+        run: |
+          git clone https://github.com/bacao1994/tcs.git
+          
+          cd tcs
+          run: mvn test --file pom.xml
