@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @NoArgsConstructor
 public class GreetingFacade {
     public String greeting() {
-        return "Hello World";
+        return "Hello World, should be fail test case here";
     }
 
     public String greetingWithName(String name) {
