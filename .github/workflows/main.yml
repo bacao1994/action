@@ -19,12 +19,17 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-      - name: Run tests
+      - name: Run Action Test Cases
         run: mvn test --file pom.xml
-      
-      - name: Run Other Test Cases
-        run: |
-          git clone https://github.com/bacao1994/tcs.git
-          
-          cd tcs
-          run: mvn test --file pom.xml
+
+      - name: Clone TCS
+        run: git clone https://github.com/bacao1994/tcs.git
+
+      - name: Build TCS with Maven
+        run: mvn -B package --file pom.xml
+
+      - name: Change Directory to tcs
+        run: cd tcs
+
+      - name: Build TCS And Run TCS Test Cases
+        run: mvn test --file pom.xml
